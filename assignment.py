@@ -39,7 +39,7 @@ def loop_sum(n):
         int: Sum of numbers
     """
     sum = 0
-    for i in range(1, n + 1):
+    for i in range(1, n + 1):  # for loop 
         sum += i
     return sum
 print("sum number =",loop_sum(10)) 
@@ -55,9 +55,9 @@ def list_operations(numbers):
     if not numbers:  # Handle an empty list
         return (0, None, None)
     
-    total = sum(numbers)
-    maximum = max(numbers)
-    minimum = min(numbers)
+    total = sum(numbers)  # finds sum of all numbers 
+    maximum = max(numbers)  # finds maximum from the list named numbers
+    minimum = min(numbers)   # finds minimum from the list named numbers
     
     return (total, maximum, minimum)
 
@@ -73,10 +73,10 @@ def dict_operations(students_dict):
     Returns:
         list: Names of students with scores > 80
     """
-    high_score_name_list =[]
-    for name , score in students_dict.items():
+    high_score_name_list =[]  # emplty list to store neme according to matched condition
+    for name , score in students_dict.items():        # forloop for storing name 
         if score > 80 :
-            high_score_name_list.append(name)
+            high_score_name_list.append(name)        # adding name as data to the empty list
     return high_score_name_list
 
 students = {        # Dictionary type data structure creation
@@ -134,7 +134,7 @@ def logical_ops(x, y):
     Returns:
         dict: Results of logical operations
     """
-    dict = {
+    dict = {           # dictionary in which value is added with logical operation
                 'and' : x and y ,
                 'or'  : x or y ,
                 'not_x': not x 
