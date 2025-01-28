@@ -7,7 +7,10 @@ def format_string(name, age):
     Returns:
         str: Formatted string
     """
-    pass
+    return f"Heollo,{name} you are {age} years old"
+name = "Maruti Nandan Thakur"
+age = 37
+print(format_string(name,age))
 
 def conditional_check(number):
     """
@@ -17,7 +20,15 @@ def conditional_check(number):
     Returns:
         str: "Greater", "Lesser", or "Equal"
     """
-    pass
+    if number > 10:
+        return "Greater"
+    elif number < 10:
+        return "Lesser"
+    else:
+        return "Equal"
+print("15 is" , conditional_check(15))  
+print("5 is", conditional_check(5))   
+print("10 is", conditional_check(10))  
 
 def loop_sum(n):
     """
@@ -27,7 +38,11 @@ def loop_sum(n):
     Returns:
         int: Sum of numbers
     """
-    pass
+    sum = 0
+    for i in range(1, n + 1):
+        sum += i
+    return sum
+print("sum number =",loop_sum(10)) 
 
 def list_operations(numbers):
     """
@@ -37,7 +52,18 @@ def list_operations(numbers):
     Returns:
         tuple: (sum, max, min)
     """
-    pass
+    if not numbers:  # Handle an empty list
+        return (0, None, None)
+    
+    total = sum(numbers)
+    maximum = max(numbers)
+    minimum = min(numbers)
+    
+    return (total, maximum, minimum)
+
+my_numbers = [2, 5, 3, 40, 10, 15] #List creation
+result = list_operations(my_numbers) #function call
+print(f"Sum of numbers: {result[0]}\n Maximum of numbers: {result[1]}\n Minimumof numbers: {result[2]}")  
 
 def dict_operations(students_dict):
     """
@@ -47,7 +73,22 @@ def dict_operations(students_dict):
     Returns:
         list: Names of students with scores > 80
     """
-    pass
+    high_score_name_list =[]
+    for name , score in students_dict.items():
+        if score > 80 :
+            high_score_name_list.append(name)
+    return high_score_name_list
+
+students = {        # Dictionary type data structure creation
+    "Hari": 67,
+    "Mohan": 75,
+    "Charlie": 85,
+    "David": 60,
+    "Eve": 92
+}
+print(f"Name of Students with scores above 80: {dict_operations(students)}")
+
+
 
 def set_operations(list1, list2):
     """
@@ -58,7 +99,10 @@ def set_operations(list1, list2):
     Returns:
         set: Common elements
     """
-    pass
+    return list(set(list1) & set(list2))  # returning the a list having common value 
+list1 = [1,3,5,6,8,9,10]
+list2 = [0,5,7,2,15,12,8]
+print(f"Common value between two lists are:{set_operations(list1,list2)}")
 
 def arithmetic_ops(a, b):
     """
@@ -69,7 +113,17 @@ def arithmetic_ops(a, b):
     Returns:
         dict: Results of arithmetic operations
     """
-    pass
+    results = {   # dictionary data structure 
+        'addition': a + b,
+        'subtraction': a - b,
+        'multiplication': a * b,
+        'division': a / b if b != 0 else 'Infinity'  # Handle division by zero
+    }        
+    return results
+a = 10.5
+b = 2.5
+print(arithmetic_ops(a,b))
+    
 
 def logical_ops(x, y):
     """
@@ -80,7 +134,18 @@ def logical_ops(x, y):
     Returns:
         dict: Results of logical operations
     """
-    pass
+    dict = {
+                'and' : x and y ,
+                'or'  : x or y ,
+                'not_x': not x 
+    }
+    return dict
+
+x = True
+y = False
+result_dict = logical_ops(x, y)
+
+print(result_dict) 
 
 def bitwise_ops(a, b):
     """
@@ -91,4 +156,13 @@ def bitwise_ops(a, b):
     Returns:
         dict: Results of bitwise operations
     """
-    pass
+    return {
+
+         'and': a & b,
+            'or': a | b ,
+            'xor': a ^ b
+    }
+
+a = 10
+b = 15 
+print(bitwise_ops(a,b))
