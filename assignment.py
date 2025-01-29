@@ -7,7 +7,7 @@ def format_string(name, age):
     Returns:
         str: Formatted string
     """
-    return f"Heollo,{name} you are {age} years old"
+    return f"My name is {name} and I am {age} years old"
 name = "Maruti Nandan Thakur"
 age = 37
 print(format_string(name,age))
@@ -99,7 +99,7 @@ def set_operations(list1, list2):
     Returns:
         set: Common elements
     """
-    return list(set(list1) & set(list2))  # returning the a list having common value 
+    return set(list1) & set(list2) # returning the a list having common value 
 list1 = [1,3,5,6,8,9,10]
 list2 = [0,5,7,2,15,12,8]
 print(f"Common value between two lists are:{set_operations(list1,list2)}")
@@ -114,10 +114,10 @@ def arithmetic_ops(a, b):
         dict: Results of arithmetic operations
     """
     results = {   # dictionary data structure 
-        'addition': a + b,
-        'subtraction': a - b,
-        'multiplication': a * b,
-        'division': a / b if b != 0 else 'Infinity'  # Handle division by zero
+        'sum': a + b,
+        'difference': a - b,
+        'product': a * b,
+        'quotient': a / b if b != 0 else 'Infinity'  # Handle division by zero
     }        
     return results
 a = 10.5
